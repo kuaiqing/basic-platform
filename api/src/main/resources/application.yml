@@ -1,0 +1,52 @@
+server:
+  port: 8088
+  servlet:
+    context-path: /basic-platform
+#spring:
+#  profiles: @activatedProperties@
+# ===== 自定义swagger配置 ===== #
+swagger:
+  enable: true
+  application-name: ${spring.application.name}
+  application-version: 1.0
+  application-description: springfox swagger 3.0
+  try-host: http://localhost:${server.port}
+spring:
+  application:
+    name: basic
+  # 配置数据库连接池
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/basic_project?useUnicode=true&characterEncoding=utf8&allowMultiQueries=true&useSSL=false&serverTimezone=UTC
+    username: root
+    password: 123456
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+#  datasource:
+#    url: jdbc:mysql://127.0.0.1:3306/basic_project?useUnicode=true&characterEncoding=utf8&allowMultiQueries=true&useSSL=false&serverTimezone=UTC
+#    username: root
+#    password: 123456
+#    type: com.zaxxer.hikari.HikariDataSource
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    hikari:
+#      # 最小连接
+#      minimum-idle: 5
+#      # 最大连接
+#      maximum-pool-size: 15
+#      # 自动提交
+#      auto-commit: true
+#      # 最大空闲时间
+#      idle-timeout: 30000
+#      # 连接池名称
+#      pool-name: DatebookHikariCP
+#      # 最大生命周期
+#      max-lifetime: 900000
+#      # 连接超时时间
+#      connection-timeout: 15000
+#      # 心跳检测
+#      connection-test-query: select 1
+#  ### 配置Redis
+#  redis:
+#    database: 0
+#    host: 10.0.0.32
+#    port: 6379
